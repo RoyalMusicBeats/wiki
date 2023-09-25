@@ -1,0 +1,18 @@
+site_name: Wiki
+site_url: https://wiki.rschmits.com/
+dev_addr: 0.0.0.0:8000
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+  palette:
+    scheme: slate
