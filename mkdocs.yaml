@@ -1,6 +1,5 @@
 site_name: Wiki
 site_url: https://wiki.rschmits.com/
-dev_addr: 0.0.0.0:8000
 theme:
   name: material
   features:
