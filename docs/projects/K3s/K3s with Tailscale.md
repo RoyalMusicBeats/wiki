@@ -1,3 +1,8 @@
+---
+tags:
+  - K3s
+  - Tailscale
+---
 #### Introduction
 In this guide, we will be exploring how to set up K3s, a lightweight Kubernetes distribution, with Tailscale, a VPN that provides secure network connectivity between machines on the Internet. K3s is designed to be a lightweight and easy-to-install Kubernetes distribution that is ideal for use in resource-constrained environments, such as small edge devices, IoTdevices, and low-powered ARM-based devices. Tailscale provides a secure way to connect these devices to each other and to the Internet, without the need for complex networking configurations. By combining K3s with Tailscale, we can create a simple, secure, and scalable Kubernetes cluster that is easy to set up and manage.
 #### Installing and configuring Tailscale
