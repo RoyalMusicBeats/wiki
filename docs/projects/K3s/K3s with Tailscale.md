@@ -19,15 +19,15 @@ To register our K3s master node, we can use the following command:
 ```sh
 curl -sfL https://get.k3s.io | K3S_TOKEN=YOUR-TOKEN sh -s - server --cluster-init --flannel-iface tailscale0
 ```
-Here's a breakdown of the different parts of the command:
-> - curl: This is a command-line utility for transferring data from or to a server, using various protocols. In this case, it is used to download the script from the given URL.
-> - -sfL: These are options to the curl command. -s tells curl to operate silently, without showing progress or error messages. -f tells curl to fail silently if the HTTP response code indicates an error. -L tells curl to follow redirects if the server sends them.
-> - https://get.k3s.io: This is the URL from which the script is downloaded.
-> - |: This is a pipe symbol that connects the output of the curl command to the input of the next command, which is sh.
-> - K3S_TOKEN="YOUR-TOKEN": This sets an environment variable called K3S_TOKEN to the value YOUR-TOKEN. The environment variable will be available to the script that is run by sh.
-> - sh: This is the command that runs the script that was downloaded by curl. The script is executed by the shell program sh.
-> - -s: This option tells the shell program sh to read commands from standard input (i.e., the pipe from curl) instead of from a script file.
-> - -server --cluster-init --flannel-iface tailscale0: These are arguments that are passed to the script that is executed by sh. The script is a script to install the K3s Kubernetes distribution, and these arguments configure the installation. --cluster-init configures K3s to set up a new Kubernetes cluster. --flannel-iface tailscale0 configures the Flannel networkinterface to use tailscale0.
+???+ note "Here's a breakdown of the various components of this command:"
+    - curl: This is a command-line utility for transferring data from or to a server, using various protocols. In this case, it is used to download the script from the given URL.
+    - -sfL: These are options to the curl command. -s tells curl to operate silently, without showing progress or error messages. -f tells curl to fail silently if the HTTP response code indicates an error. -L tells curl to follow redirects if the server sends them.
+    - https://get.k3s.io: This is the URL from which the script is downloaded.
+    - |: This is a pipe symbol that connects the output of the curl command to the input of the next command, which is sh.
+    - K3S_TOKEN="YOUR-TOKEN": This sets an environment variable called K3S_TOKEN to the value YOUR-TOKEN. The environment variable will be available to the script that is run by sh.
+    - sh: This is the command that runs the script that was downloaded by curl. The script is executed by the shell program sh.
+    - -s: This option tells the shell program sh to read commands from standard input (i.e., the pipe from curl) instead of from a script file.
+    - -server --cluster-init --flannel-iface tailscale0: These are arguments that are passed to the script that is executed by sh. The script is a script to install the K3s Kubernetes distribution, and these arguments configure the installation. --cluster-init configures K3s to set up a new Kubernetes cluster. --flannel-iface tailscale0 configures the Flannel networkinterface to use tailscale0.
 #### Retrieving the full-token from our k3s master server
 To retrieve the token from a K3s server, we can use the following command:
 ```sh
