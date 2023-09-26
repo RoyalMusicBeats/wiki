@@ -1,11 +1,6 @@
----
-tags:
-  - K3s
-  - Tailscale
----
-## Introduction
+### Introduction
 In this guide, we will be exploring how to set up K3s, a lightweight Kubernetes distribution, with Tailscale, a VPN that provides secure network connectivity between machines on the Internet. K3s is designed to be a lightweight and easy-to-install Kubernetes distribution that is ideal for use in resource-constrained environments, such as small edge devices, IoTdevices, and low-powered ARM-based devices. Tailscale provides a secure way to connect these devices to each other and to the Internet, without the need for complex networking configurations. By combining K3s with Tailscale, we can create a simple, secure, and scalable Kubernetes cluster that is easy to set up and manage.
-### Installing and configuring Tailscale
+#### Installing and configuring Tailscale
 Install the Tailscale client by running the following command:
 ```sh
 curl -fsSL https://tailscale.com/install.sh | sh
@@ -19,7 +14,7 @@ After joining the Tailscale network, you can verify that your device is connecte
 tailscale status
 ```
 This needs to be done on every worker en master node.
-### Setup the first K3s master node
+#### Setup the first K3s master node
 To register our K3s master node, we can use the following command:
 ```sh
 curl -sfL https://get.k3s.io | K3S_TOKEN=YOUR-TOKEN sh -s - server --cluster-init --flannel-iface tailscale0
@@ -33,7 +28,7 @@ Here's a breakdown of the different parts of the command:
 > - sh: This is the command that runs the script that was downloaded by curl. The script is executed by the shell program sh.
 > - -s: This option tells the shell program sh to read commands from standard input (i.e., the pipe from curl) instead of from a script file.
 > - -server --cluster-init --flannel-iface tailscale0: These are arguments that are passed to the script that is executed by sh. The script is a script to install the K3s Kubernetes distribution, and these arguments configure the installation. --cluster-init configures K3s to set up a new Kubernetes cluster. --flannel-iface tailscale0 configures the Flannel networkinterface to use tailscale0.
-### Retrieving the full-token from our k3s master server
+#### Retrieving the full-token from our k3s master server
 To retrieve the token from a K3s server, we can use the following command:
 ```sh
 cat /var/lib/rancher/k3s/server/token
@@ -42,7 +37,7 @@ This will display the token value that was generated during the installation of 
 !!! danger
     The token is used to authenticate new nodes that are added to the Kubernetes cluster. Be sure to keep the token value secure, as it provides full access to the Kubernetes API server.
 
-### Adding another K3s master server
+#### Adding another K3s master server
 On the new master server, run the following command to join the cluster:
 ```sh
 curl -sfL https://get.k3s.io | K3S_TOKEN=YOUR-FULL-TOKEN sh -s - server --server https://YOUR-TAILSCALE-IP:6443  --flannel-iface tailscale0
@@ -54,13 +49,13 @@ curl -sfL https://get.k3s.io | K3S_TOKEN=YOUR-FULL-TOKEN sh -s - server --server
     - --flannel-iface tailscale0: This specifies the Tailscale virtual network interface to use for communication between the K3s nodes.
 
 By following these steps, you should now have a multi-master K3s cluster with two master servers. You can repeat these steps to add additional master servers to the cluster if desired.
-### Adding a K3s agent node
+#### Adding a K3s agent node
 ```sh
 curl -sfL https://get.k3s.io | K3S_TOKEN=YOUR-FULL-TOKEN K3S_URL=https://YOUR-TAILSCALE-IP:6443 sh -s - --flannel-iface tailscale0
 ```
-### Optional: Installing longhorn
+#### Optional: Installing longhorn
 [Installing longhorn on K3s](https://wiki.rschmits.com/books/k3s-with-tailscale/page/installing-longhorn-on-k3s)
-### Trouble
+#### Trouble
 ```sh
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 ```
