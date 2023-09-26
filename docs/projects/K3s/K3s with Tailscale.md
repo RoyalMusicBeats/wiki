@@ -56,7 +56,7 @@ curl -sfL https://get.k3s.io | K3S_TOKEN=YOUR-FULL-TOKEN K3S_URL=https://YOUR-TA
 #### Optional: Installing longhorn
 [Installing longhorn on K3s](https://wiki.rschmits.com/books/k3s-with-tailscale/page/installing-longhorn-on-k3s)
 #### Trouble
-```sh
+``` sh
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 ```
 ```
