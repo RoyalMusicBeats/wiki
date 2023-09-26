@@ -17,7 +17,9 @@ In the ever-changing world of IT, I find my purpose and my playground. From opti
 ## Projects
 
 > - K3s with Tailscale: This project involves setting up and configuring a Kubernetes cluster using K3s, a lightweight Kubernetes distribution, and integrating it with Tailscale, a secure networking tool. This combination enables secure and easy-to-manage communication between nodes in your cluster.
+> - Link:
 
-> -K3s with Longhorn: In this project, you're likely implementing Longhorn, a cloud-native distributed block storage system, within your K3s Kubernetes cluster. Longhorn can help manage persistent storage for your containerized applications, ensuring data resilience and reliability.
+> - K3s with Longhorn: In this project, you're likely implementing Longhorn, a cloud-native distributed block storage system, within your K3s Kubernetes cluster. Longhorn can help manage persistent storage for your containerized applications, ensuring data resilience and reliability.
+> - Link:
 
 These projects demonstrate your engagement with Kubernetes, containerization, and networking technologies, showcasing your dedication to enhancing infrastructure and application management. Good luck with your endeavors!
