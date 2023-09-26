@@ -38,7 +38,9 @@ To retrieve the token from a K3s server, we can use the following command:
 ```sh
 cat /var/lib/rancher/k3s/server/token
 ```
-This will display the token value that was generated during the installation of the K3s server. The token is used to authenticate new nodes that are added to the Kubernetes cluster. Be sure to keep the token value secure, as it provides full access to the Kubernetes API server.
+This will display the token value that was generated during the installation of the K3s server. 
+!!! danger The token is used to authenticate new nodes that are added to the Kubernetes cluster. Be sure to keep the token value secure, as it provides full access to the Kubernetes API server.
+
 #### Adding another K3s master server
 On the new master server, run the following command to join the cluster:
 ```sh
