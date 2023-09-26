@@ -23,3 +23,9 @@ In the ever-changing world of IT, I find my purpose and my playground. From opti
 > - Link:
 
 These projects demonstrate your engagement with Kubernetes, containerization, and networking technologies, showcasing your dedication to enhancing infrastructure and application management. Good luck with your endeavors!
+
+## Tags
+
+Following is a list of relevant tags:
+
+[TAGS]

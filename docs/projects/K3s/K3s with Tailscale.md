@@ -58,3 +58,8 @@ kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/late
 ```
 https://longhorn.io/kb/troubleshooting-dns-resolution-failed/
 ``
+## Tags
+
+Following is a list of relevant tags:
+
+[TAGS]
