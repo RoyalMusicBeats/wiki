@@ -13,6 +13,7 @@ theme:
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
+    - content.code.annotate 
   language: en
   palette:
     scheme: slate
