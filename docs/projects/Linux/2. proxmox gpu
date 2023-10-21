@@ -1,0 +1,6 @@
+dmesg | grep -e IOMMU
+
+/etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="quiet  iommu=pt"
+
+dmesg | grep -e IOMMU
