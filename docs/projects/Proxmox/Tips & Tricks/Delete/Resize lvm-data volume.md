@@ -1,19 +1,19 @@
-### Remove and resize the default lvm-data volume
-
-
+#### Remove and resize the default lvm-data volume
 ```sh
 lvremove /dev/pve/data
 ```
 
-Resize root partition
+#### Resize root partition
 ```sh
 lvresize -l +100%FREE /dev/pve/root
 ```
-Completing
+
+#### Completing
 ```sh
 resize2fs /dev/mapper/pve-root
 ```
-Verification
+
+#### Verification
 ```sh
 lsblk
 ```
